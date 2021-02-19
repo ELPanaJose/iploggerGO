@@ -1,2 +1,2 @@
 # iploggerGO
-use glitch for use this
+use ngrok for use this
