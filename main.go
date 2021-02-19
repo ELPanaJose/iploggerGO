@@ -8,7 +8,13 @@ func main() {
 	fmt.Println("Use ngrok! `ngrok http 3000`")
 	fmt.Println("server on port 3000")
 	http.HandleFunc("/", getIP)
-	http.ListenAndServe(":3000", nil)
+	port, ok := os.LookupEnv("PORT")
+
+    if ok == false {
+        port = "3000"
+    }
+
+    log.Println(http.ListenAndServe(":"+port, nil))
 }
 
 func getIP(w http.ResponseWriter, r *http.Request) {
