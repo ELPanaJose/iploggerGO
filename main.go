@@ -14,5 +14,5 @@ func main() {
 func getIP(w http.ResponseWriter, r *http.Request) {
 	ip := r.Header.Get("x-forwarded-for")
 	log.Println("new ip : ", ip)
-	http.Redirect(w, r, "https://ranon-rat.herokuapp.com", 301)
+	http.Redirect(w, r, "https://elpanajose.ga", 301)
 }
